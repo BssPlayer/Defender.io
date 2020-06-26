@@ -4,7 +4,7 @@
 <html>
 
 <head>
-	<title>Это мой сайт, Богдан</title>
+	<title>Эfddто мой сайт, Богдан</title>
 </head>
 <body>
     </body>
