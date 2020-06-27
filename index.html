@@ -5,26 +5,16 @@
 <head>
 	<title>Чисто сайт</title>
 	<script type="text/javascript" src="clickscripts.js"></script>
-	<style>
-.button8 {
- 	color: black;
-	cursor: pointer;
-	position: absolute;
-	transform: translate(-105, 0);
-	top: 40px;
-	width: 210px;
-	height: 70px;
-	border-radius: 4px;
-	font-size: 11px
-	right: 50%;
-}
-</style>
+	<link rel="stylesheet" type="text/css" href="styles.css">
 </head>
-<body>
-	<p><br><br></p>
-	<div style="text-align: center" id="divclick><button type="button" id="clickbutton" class="button8" onclick="clickfunc()">Кликни!</button>
+<body id="body" style="height: 95vh;">
+	<div id="divclick">
+	<button type="button" id="clickbtn" class="clickbtn" onclick="click()">
+	<div id="clickbtntext">Кликни!</div>
+	</button>
 	</div>
-	<div style="text-align: center" id="clickpoint">
+	<div id="clickpoint" class="CP">
+	0
 	</div>	
 </body>
 </html>

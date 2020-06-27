@@ -1,8 +1,7 @@
 let CP=0;
-function clickfunc() 
+function click() 
 {          
-
       CP++;
-      document.getElementById("clickpoint").innerHTML = "У тебя " + CP + " ClickPoints";
+      document.getElementById("clickpoint").innerHTML = "У тебя " + CP + " Click Points";
 }
 
