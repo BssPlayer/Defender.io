@@ -1,0 +1,23 @@
+.clickbtn {
+ 	color: black;
+	cursor: pointer;
+	position: absolute;
+	transform: translate(50%, -50%);
+	top: 10%;
+	width: 210px;
+	height: 70px;
+	border-radius: 4px;
+	border: 3px solid;
+	font-size: 20px;
+	right: 50%;
+}
+
+.CP {
+  position:absolute;
+  text-align:center;
+  transform: translate(50%, 0);
+  top: 3%;
+  right: 50%;
+	width:210px;
+  font-size:15px;
+}
