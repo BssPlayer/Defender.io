@@ -1,6 +1,6 @@
-  <script>
-	function clickfunc() 
-	{
- 	     document.getElementById("clickpoint").innerHTML = "Ты кликнул!";
-	}
-	</script>
+
+function clickfunc() 
+{
+      document.getElementById("clickpoint").innerHTML = "Ты кликнул!";
+}
+
