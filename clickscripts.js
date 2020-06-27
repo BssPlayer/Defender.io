@@ -1,5 +1,7 @@
 function clickfunc() 
-{     
-      document.getElementById("clickpoint").innerHTML = "У тебя ClickPoints";
+{          
+      let CP=0;
+      CP=CP+1;
+      document.getElementById("clickpoint").innerHTML = "У тебя " + CP + " ClickPoints";
 }
 
