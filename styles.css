@@ -3,7 +3,7 @@
 	cursor: pointer;
 	position: absolute;
 	transform: translate(50%, -50%);
-	top: 50%;
+	top: 10%;
 	width: 210px;
 	height: 70px;
 	border-radius: 4px;
@@ -16,7 +16,7 @@
   position:absolute;
   text-align:center;
   transform: translate(50%, 0);
-  top: 40%;
+  top: 3%;
   right: 50%;
 	width:210px;
   font-size:15px;

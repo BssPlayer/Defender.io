@@ -1,13 +1,18 @@
 <!doctype html>
 
+<html>
+
 <head>
 	<title>Чисто сайт</title>
-		<script type="text/javascript" src="clickscripts.js"></script>
-
+	<script type="text/javascript" src="clickscripts.js"></script>
+	<link rel="stylesheet" type="text/css" href="styles.css">
 </head>
-<body>
-	<p><br></p>
-	<div style="text-align: center"><button type="button" onclick="click()">Кликни!</button>
-	<div style="text-align: center" id="clickpoint">0</div>
+<body id="body" style="height: 95vh;">
+	<div id="divclick">
+	<button type="button" class="clickbtn" id="clickbtn" onclick="clickfunc()">
+	<div id="clickbtntext">Кликни!</div>
+	</button>
+	</div>
+	<div class="CP" id="CP">0</div>	
 </body>
 </html>
