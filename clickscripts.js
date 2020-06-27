@@ -1,4 +1,4 @@
-var CP=0;
+let CP=0;
 function clickfunc() 
 {          
       CP=CP+1;
