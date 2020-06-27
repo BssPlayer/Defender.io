@@ -6,26 +6,26 @@
 	<title>Чисто сайт</title>
 	<script type="text/javascript" src="clickscripts.js"></script>
 	<style>
-.button7 {
-  font-weight: 700;
+.button8 {
+  display: inline-block;
   color: white;
+  font-weight: 700;
   text-decoration: none;
-  padding: .8em 1em calc(.8em + 3px);
-  border-radius: 3px;
-  background: rgb(64,199,129);
-  box-shadow: 0 -3px rgb(53,167,110) inset;
+  user-select: none;
+  padding: .5em 2em;
+  outline: none;
+  border: 2px solid;
+  border-radius: 1px;
   transition: 0.2s;
 } 
-.button7:hover { background: rgb(53, 167, 110); }
-.button7:active {
-  background: rgb(33,147,90);
-  box-shadow: 0 3px rgb(33,147,90) inset;
+.button8:hover { background: rgba(255,255,255,.2); }
+.button8:active { background: white; }
 }
 </style>
 </head>
 <body>
 	<p><br><br></p>
-	<div style="text-align: center" id="divclick><button type="button" id="clickbutton" class="button7" onclick="clickfunc()">Кликни!</button>
+	<div style="text-align: center" id="divclick><button type="button" id="clickbutton" href="#" class="button8" onclick="clickfunc()">Кликни!</button>
 	</div>
 	<div style="text-align: center" id="clickpoint">
 	</div>	
