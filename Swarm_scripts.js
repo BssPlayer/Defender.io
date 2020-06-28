@@ -50,8 +50,8 @@ setInterval(swarmUpdate, 1000);
 function swarmUpdate()
 {
     player.meat += player.meatPerSec;
-    player.swarm1count += swarm1growth;
-    player.swarm2count += swarm2growth;
-    player.swarm3count += swarm3growth;
+    player.swarm1count += player.swarm1growth;
+    player.swarm2count += player.swarm2growth;
+    player.swarm3count += player.swarm3growth;
 }
 

@@ -48,10 +48,10 @@ function gameUpdate()
     document.getElementById('swarm3Max').textContent = 'Cost: ' + player.swarm3cost + " meat";
     document.getElementById('swarm4Max').textContent = 'Cost: ' + player.swarm4cost + " meat";
    
-    meatPerSec = player.swarm1count * player.swarm1factor;
-    swarm1growth = player.swarm2count * player.swarm2factor;
-    swarm2growth = player.swarm3count * player.swarm3factor;
-    swarm3growth = player.swarm4count * player.swarm4factor;
+    player.meatPerSec = player.swarm1count * player.swarm1factor;
+    player.swarm1growth = player.swarm2count * player.swarm2factor;
+    player.swarm2growth = player.swarm3count * player.swarm3factor;
+    player.swarm3growth = player.swarm4count * player.swarm4factor;
 
-    document.getElementById('meatPerSec').textContent = meatPerSec;  
+    document.getElementById('meatPerSec').textContent = player.meatPerSec;  
 }
