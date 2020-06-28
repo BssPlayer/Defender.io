@@ -1,3 +1,4 @@
+
 .clickbtn {
  	color: black;
 	cursor: pointer;
@@ -20,4 +21,32 @@
   right: 50%;
 	width:210px;
   font-size:15px;
+}
+
+p,
+ul,
+ol,
+table,
+pre,
+dl {
+    margin: 0 0 3px;
+}
+
+table {
+  border-spacing: 0
+}
+
+.storebtn {
+  color: black;
+  background: #F2F2F2;
+  font-weight: bold;
+  font-family: Typewriter;
+  border: 1px solid #127A20;
+  width: 120px;
+  height: 25px;
+  transition-duration: 0.2s;
+  cursor: pointer;
+  border-radius: 4px;
+  font-size: 13px;
+  vertical-align: top;
 }
