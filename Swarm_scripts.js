@@ -19,7 +19,7 @@ function buySwarm(tier)
         if (player.swarm2boughtCount % 10 == 0)
         {
             player.swarm2cost *= player.swarm2costUp; 
-            player.swarm1factor *= player.factorPerTen;
+            player.swarm2factor *= player.factorPerTen;
         }
     }
 }
