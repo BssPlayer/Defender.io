@@ -1,0 +1,72 @@
+<!doctype html>
+
+<html>
+
+	<head>
+		<title>Чисто сайт</title>
+		<link rel="stylesheet" type="text/css" href="game/styles.css">
+	</head>
+
+<body id="body" style="height: 95vh;">
+	<div align="center">
+		<div>
+			<p>You have <span id="meatAmount" style="font-size:30px; color: rgb(221, 121, 38)">0</span> meat.</p>
+		</div>
+		<p>You are getting <span id="meatPerSec">0</span> meat per second.</p>
+		<table class="table">
+			<tr style="font-size: 16px" id="swarmRow1">
+				<td id="swarm1" width="41%">
+					1st swarm: Drone x1
+				</td>
+				<td>
+					<div id="swarm1count">0 (0)</div>
+				</td>
+				<td align="right" width="10%">
+					<button id="swarm1Max" style="color:black; width:195px; height:30px" class="storebtn" align="right" onclick="buySwarm(1)">Cost: 10</button>
+				</td>
+			</tr>
+			<tr style="font-size: 16px" id="swarmRow1">
+				<td id="swarm2" width="41%">
+					2nd swarm: Queen x1
+				</td>
+				<td>
+					<div id="swarm2count">0 (0)</div>
+				</td>
+				<td align="right" width="10%">
+					<button id="swarm2Max" style="color:black; width:195px; height:30px" class="storebtn" align="right" onclick="buySwarm(2)">Cost: 10</button>
+				</td>
+			</tr>			
+			<tr style="font-size: 16px" id="swarmRow1">
+				<td id="swarm3" width="41%">
+					3rd swarm: Nest x1
+				</td>
+				<td>
+					<div id="swarm3count">0 (0)</div>
+				</td>
+				<td align="right" width="10%">
+					<button id="swarm3Max" style="color:black; width:195px; height:30px" class="storebtn" align="right" onclick="buySwarm(3)">Cost: 10</button>
+				</td>
+			</tr>
+			<tr style="font-size: 16px" id="swarmRow1">
+				<td id="swarm4" width="41%">
+					4th swarm: Greater Queen x1
+				</td>
+				<td>
+					<div id="swarm4count">0 (0)</div>
+				</td>
+				<td align="right" width="10%">
+					<button id="swarm4Max" style="color:black; width:195px; height:30px" class="storebtn" align="right" onclick="buySwarm(4)">Cost: 10</button>
+				</td>
+			</tr>
+			<tr style="font-size: 16px" id="test1">
+			<td align="left" width="10%">
+				<button id="test" style="color:black; width:195px; height:30px" class="storebtn" align="right" onclick="test()">test</button>
+			</td></tr>
+		</table>
+	</div>
+	<script type="text/javascript" src="game/break_infinity.min.js"></script>
+	<script type="text/javascript" src="game/format.js"></script>
+	<script type="text/javascript" src="game/Game.js"></script>
+	<script type="text/javascript" src="game/Swarm_scripts.js"></script>
+</body>
+</html>
