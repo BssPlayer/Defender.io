@@ -1,6 +1,6 @@
 player =
 {
-    meat: new Decimal("1e1"),
+    meat: new Decimal("10"),
     meatPerSec: new Decimal("0"),
     factorPerTen: new Decimal("2"),
     swarm1growth: new Decimal("0"),
@@ -71,4 +71,16 @@ function gameUpdate()
     player.swarm3growth = player.swarm4.amount.mul(player.swarm4.factor);
 
     document.getElementById('meatPerSec').textContent = shorten(player.meatPerSec);  
+
+    for(var a = 1; a < 5; a++)
+    { 
+        if (player.meat.gte(player["swarm" + a].cost)) 
+        {
+            document.getElementById("swarm" + a + "Max").className = 'storebtn';
+        } 
+        else 
+        {
+            document.getElementById("swarm" + a + "Max").className = 'unavailablebtn';
+        }
+    }
 }
