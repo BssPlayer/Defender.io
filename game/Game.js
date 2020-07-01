@@ -12,7 +12,6 @@ player =
         cost: new Decimal("1e1"),
         costUp: new Decimal("1e3"),
         amount: new Decimal("0"),
-        bought: 0,
         factor: new Decimal("1"),
         baseAmount: 0
     },    
@@ -21,7 +20,6 @@ player =
         cost: new Decimal("1e2"),
         costUp: new Decimal("1e4"),
         amount: new Decimal("0"),
-        bought: 0,
         factor: new Decimal("1"),
         baseAmount: 0
     },    
@@ -30,7 +28,6 @@ player =
         cost: new Decimal("1e4"),
         costUp: new Decimal("1e5"),
         amount: new Decimal("0"),
-        bought: 0,
         factor: new Decimal("1"),
         baseAmount: 0
     },
@@ -39,7 +36,38 @@ player =
         cost: new Decimal("1e6"),
         costUp: new Decimal("1e6"),
         amount: new Decimal("0"),
-        bought: 0,
+        factor: new Decimal("1"),
+        baseAmount: 0
+    },    
+    swarm5: 
+    {
+        cost: new Decimal("1e9"),
+        costUp: new Decimal("1e8"),
+        amount: new Decimal("0"),
+        factor: new Decimal("1"),
+        baseAmount: 0
+    },    
+    swarm6: 
+    {
+        cost: new Decimal("1e13"),
+        costUp: new Decimal("1e10"),
+        amount: new Decimal("0"),
+        factor: new Decimal("1"),
+        baseAmount: 0
+    },    
+    swarm7: 
+    {
+        cost: new Decimal("1e18"),
+        costUp: new Decimal("1e12"),
+        amount: new Decimal("0"),
+        factor: new Decimal("1"),
+        baseAmount: 0
+    },    
+    swarm8: 
+    {
+        cost: new Decimal("1e24"),
+        costUp: new Decimal("1e15"),
+        amount: new Decimal("0"),
         factor: new Decimal("1"),
         baseAmount: 0
     },
@@ -54,17 +82,11 @@ function gameUpdate()
     document.getElementById('swarm2').textContent = '2nd swarm: Queen x' + shorten(player.swarm2.factor);
     document.getElementById('swarm3').textContent = '3rd swarm: Nest x' + shorten(player.swarm3.factor);
     document.getElementById('swarm4').textContent = '4th swarm: Greater Queen x' + shorten(player.swarm4.factor);
-    
-    document.getElementById("swarm1count").textContent = shortenCount(player.swarm1.amount) + ' (' + player.swarm1.baseAmount % 10 + ')';
-    document.getElementById("swarm2count").textContent = shortenCount(player.swarm2.amount) + ' (' + player.swarm2.baseAmount % 10 + ')';
-    document.getElementById("swarm3count").textContent = shortenCount(player.swarm3.amount) + ' (' + player.swarm3.baseAmount % 10 + ')';
-    document.getElementById("swarm4count").textContent = shortenCount(player.swarm4.amount) + ' (' + player.swarm4.baseAmount % 10 + ')';
-
-    document.getElementById('swarm1Max').textContent = 'Cost: ' + shortenCosts(player.swarm1.cost) + " meat";
-    document.getElementById('swarm2Max').textContent = 'Cost: ' + shortenCosts(player.swarm2.cost) + " meat";
-    document.getElementById('swarm3Max').textContent = 'Cost: ' + shortenCosts(player.swarm3.cost) + " meat";
-    document.getElementById('swarm4Max').textContent = 'Cost: ' + shortenCosts(player.swarm4.cost) + " meat";
-   
+    document.getElementById('swarm5').textContent = '5th swarm: Hive x' + shorten(player.swarm5.factor);
+    document.getElementById('swarm6').textContent = '6th swarm: Hive Queen x' + shorten(player.swarm6.factor);
+    document.getElementById('swarm7').textContent = '7th swarm: Hive Empress x' + shorten(player.swarm7.factor);
+    document.getElementById('swarm8').textContent = '8th swarm: Neuroprophet x' + shorten(player.swarm8.factor);
+  
     player.meatPerSec = player.swarm1.amount.mul(player.swarm1.factor);
     player.swarm1growth = player.swarm2.amount.mul(player.swarm2.factor);
     player.swarm2growth = player.swarm3.amount.mul(player.swarm3.factor);
@@ -72,8 +94,12 @@ function gameUpdate()
 
     document.getElementById('meatPerSec').textContent = shorten(player.meatPerSec);  
 
-    for(var a = 1; a < 5; a++)
+    for(var a = 1; a < 9; a++)
     { 
+        document.getElementById("swarm" + a + "count").textContent = shortenCount(player["swarm" + a].amount) + ' (' + player["swarm" + a].baseAmount % 10 + ')';
+    
+        document.getElementById("swarm" + a + "Max").textContent = 'Cost: ' + shortenCosts(player["swarm" + a].cost) + " meat";
+
         if (player.meat.gte(player["swarm" + a].cost)) 
         {
             document.getElementById("swarm" + a + "Max").className = 'storebtn';
