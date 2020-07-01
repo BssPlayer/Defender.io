@@ -1,16 +1,8 @@
 player =
 {
-    meat: new Decimal("1e15"),
+    meat: new Decimal("10"),
     meatPerSec: new Decimal("0"),
     factorPerTen: new Decimal("2"),
-    swarm1cost: new Decimal("1e1"),
-    swarm2cost: new Decimal("1e2"),
-    swarm3cost: new Decimal("1e4"),
-    swarm4cost: new Decimal("1e6"),
-    swarm1costUp: new Decimal("1e3"),
-    swarm2costUp: new Decimal("1e4"),
-    swarm3costUp: new Decimal("1e5"),
-    swarm4costUp: new Decimal("1e6"),
     swarm1growth: new Decimal("0"),
     swarm2growth: new Decimal("0"),
     swarm3growth: new Decimal("0"),
