@@ -1,18 +1,15 @@
 player =
 {
-    meat: new Decimal("10"),
+    meat: new Decimal("1e1"),
     meatPerSec: new Decimal("0"),
     factorPerTen: new Decimal("2"),
-    swarm1growth: new Decimal("0"),
-    swarm2growth: new Decimal("0"),
-    swarm3growth: new Decimal("0"),
-    swarm4growth: new Decimal("0"),
     swarm1: 
     {
         cost: new Decimal("1e1"),
         costUp: new Decimal("1e3"),
         amount: new Decimal("0"),
         factor: new Decimal("1"),
+        growth: new Decimal("0"),
         baseAmount: 0
     },    
     swarm2: 
@@ -21,6 +18,7 @@ player =
         costUp: new Decimal("1e4"),
         amount: new Decimal("0"),
         factor: new Decimal("1"),
+        growth: new Decimal("0"),
         baseAmount: 0
     },    
     swarm3: 
@@ -29,6 +27,7 @@ player =
         costUp: new Decimal("1e5"),
         amount: new Decimal("0"),
         factor: new Decimal("1"),
+        growth: new Decimal("0"),
         baseAmount: 0
     },
     swarm4: 
@@ -37,6 +36,7 @@ player =
         costUp: new Decimal("1e6"),
         amount: new Decimal("0"),
         factor: new Decimal("1"),
+        growth: new Decimal("0"),
         baseAmount: 0
     },    
     swarm5: 
@@ -45,6 +45,7 @@ player =
         costUp: new Decimal("1e8"),
         amount: new Decimal("0"),
         factor: new Decimal("1"),
+        growth: new Decimal("0"),
         baseAmount: 0
     },    
     swarm6: 
@@ -53,6 +54,7 @@ player =
         costUp: new Decimal("1e10"),
         amount: new Decimal("0"),
         factor: new Decimal("1"),
+        growth: new Decimal("0"),
         baseAmount: 0
     },    
     swarm7: 
@@ -61,6 +63,7 @@ player =
         costUp: new Decimal("1e12"),
         amount: new Decimal("0"),
         factor: new Decimal("1"),
+        growth: new Decimal("0"),
         baseAmount: 0
     },    
     swarm8: 
@@ -69,6 +72,7 @@ player =
         costUp: new Decimal("1e15"),
         amount: new Decimal("0"),
         factor: new Decimal("1"),
+        growth: new Decimal("0"),
         baseAmount: 0
     },
 }
@@ -88,9 +92,13 @@ function gameUpdate()
     document.getElementById('swarm8').textContent = '8th swarm: Neuroprophet x' + shorten(player.swarm8.factor);
   
     player.meatPerSec = player.swarm1.amount.mul(player.swarm1.factor);
-    player.swarm1growth = player.swarm2.amount.mul(player.swarm2.factor);
-    player.swarm2growth = player.swarm3.amount.mul(player.swarm3.factor);
-    player.swarm3growth = player.swarm4.amount.mul(player.swarm4.factor);
+    player.swarm1.growth = player.swarm2.amount.mul(player.swarm2.factor);
+    player.swarm2.growth = player.swarm3.amount.mul(player.swarm3.factor);
+    player.swarm3.growth = player.swarm4.amount.mul(player.swarm4.factor);
+    player.swarm4.growth = player.swarm5.amount.mul(player.swarm5.factor);
+    player.swarm5.growth = player.swarm6.amount.mul(player.swarm6.factor);
+    player.swarm6.growth = player.swarm7.amount.mul(player.swarm7.factor);
+    player.swarm7.growth = player.swarm8.amount.mul(player.swarm8.factor);
 
     document.getElementById('meatPerSec').textContent = shorten(player.meatPerSec);  
 

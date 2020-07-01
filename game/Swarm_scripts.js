@@ -17,8 +17,9 @@ setInterval(swarmUpdate, 100);
 function swarmUpdate()
 {
     player.meat = player.meat.plus(player.meatPerSec.div(10));
-    player.swarm1.amount = player.swarm1.amount.plus(player.swarm1growth.div(50));
-    player.swarm2.amount = player.swarm2.amount.plus(player.swarm2growth.div(50));
-    player.swarm3.amount = player.swarm3.amount.plus(player.swarm3growth.div(50));
+    for(var a = 1; a < 8; a++)
+    { 
+        player["swarm" + a].amount = player["swarm" + a].amount.plus(player["swarm" + a].growth.div(30+(3*a)));
+    }
 }
 
