@@ -7,8 +7,8 @@
 		<link rel="stylesheet" type="text/css" href="game/styles.css">
 	</head>
 
-<body id="body" style="height: 95vh;">
-	<div align="center">
+<body id="body" style="height: 90vh;">
+	<div align="center" style="margin-top: 50px">
 		<div>
 			<p>You have <span id="meatAmount" style="font-size:30px; color: rgb(221, 121, 38)">0</span> meat.</p>
 		</div>
@@ -103,13 +103,11 @@
 				</td>
 			</tr>
 		</table>
-		<table class="table" style="margin-top: 45%">		
-			<tr style="font-size: 16px">
-				<td><div><button id="save" class="storebtn" onclick="set_save(player)" style="color:black; width: 200px; height: 35px; font-size: 17px">Save</button></div></td>
-				<td><div><button id="load" class="storebtn" onclick="get_save()" style="color:black; width: 200px; height: 35px; font-size: 17px">Load</button></div></td>
-				<td><div><button id="rename" class="storebtn" onclick="reset_save()" style="color:black; width: 150px; height: 35px; font-size:17px">Reset</button></div></td>
-			</tr>
-		</table>
+		<div class="SaveLoad">
+			<button id="save" class="storebtn" onclick="set_save(player)" style="display: inline;">Save</button>
+			<button id="load" class="storebtn" onclick="get_save()" style="display: inline">Load</button>
+			<button id="rename" class="storebtn" onclick="reset_save()" style="display: inline">Reset</button>
+		</div>
 	<script type="text/javascript" src="game/break_infinity.min.js"></script>
 	<script type="text/javascript" src="game/format.js"></script>
 	<script type="text/javascript" src="game/save_load_system.js"></script>
