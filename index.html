@@ -19,10 +19,10 @@
 					1st swarm: Drone x1
 				</td>
 				<td>
-					<div id="swarm1count">0 (0)</div>
+					<div id="swarm1amount">0 (0)</div>
 				</td>
 				<td align="right" width="10%">
-					<button id="swarm1Max" style="color:black; width:195px; height:30px" class="storebtn" align="right" onclick="buySwarm(1)">Cost: 10</button>
+					<button id="swarm1Buy" style="color:black; width:195px; height:30px" class="storebtn" align="right" onclick="buySwarm(1)">Cost: 10</button>
 				</td>
 			</tr>
 			<tr style="font-size: 16px" id="swarmRow2">
@@ -30,10 +30,10 @@
 					2nd swarm: Queen x1
 				</td>
 				<td>
-					<div id="swarm2count">0 (0)</div>
+					<div id="swarm2amount">0 (0)</div>
 				</td>
 				<td align="right" width="10%">
-					<button id="swarm2Max" style="color:black; width:195px; height:30px" class="storebtn" align="right" onclick="buySwarm(2)">Cost: 10</button>
+					<button id="swarm2Buy" style="color:black; width:195px; height:30px" class="storebtn" align="right" onclick="buySwarm(2)">Cost: 10</button>
 				</td>
 			</tr>			
 			<tr style="font-size: 16px" id="swarmRow3">
@@ -41,10 +41,10 @@
 					3rd swarm: Nest x1
 				</td>
 				<td>
-					<div id="swarm3count">0 (0)</div>
+					<div id="swarm3amount">0 (0)</div>
 				</td>
 				<td align="right" width="10%">
-					<button id="swarm3Max" style="color:black; width:195px; height:30px" class="storebtn" align="right" onclick="buySwarm(3)">Cost: 10</button>
+					<button id="swarm3Buy" style="color:black; width:195px; height:30px" class="storebtn" align="right" onclick="buySwarm(3)">Cost: 10</button>
 				</td>
 			</tr>
 			<tr style="font-size: 16px" id="swarmRow4">
@@ -52,73 +52,69 @@
 					4th swarm: Greater Queen x1
 				</td>
 				<td>
-					<div id="swarm4count">0 (0)</div>
+					<div id="swarm4amount">0 (0)</div>
 				</td>
 				<td align="right" width="10%">
-					<button id="swarm4Max" style="color:black; width:195px; height:30px" class="storebtn" align="right" onclick="buySwarm(4)">Cost: 10</button>
+					<button id="swarm4Buy" style="color:black; width:195px; height:30px" class="storebtn" align="right" onclick="buySwarm(4)">Cost: 10</button>
 				</td>
 			</tr>
-			<tr style="font-size: 16px" id="swarmRow5">
+			<tr style="font-size: 16px; visibility: hidden" id="swarmRow5">
 				<td id="swarm5" width="41%">
 					5th swarm: Hive x1
 				</td>
 				<td>
-					<div id="swarm5count">0 (0)</div>
+					<div id="swarm5amount">0 (0)</div>
 				</td>
 				<td align="right" width="10%">
-					<button id="swarm5Max" style="color:black; width:195px; height:30px" class="storebtn" align="right" onclick="buySwarm(5)">Cost: 10</button>
+					<button id="swarm5Buy" style="color:black; width:195px; height:30px" class="storebtn" align="right" onclick="buySwarm(5)">Cost: 10</button>
 				</td>
 			</tr>
-			<tr style="font-size: 16px" id="swarmRow6">
+			<tr style="font-size: 16px; visibility: hidden" id="swarmRow6">
 				<td id="swarm6" width="41%">
 					6th swarm: Hive Queen x1
 				</td>
 				<td>
-					<div id="swarm6count">0 (0)</div>
+					<div id="swarm6amount">0 (0)</div>
 				</td>
 				<td align="right" width="10%">
-					<button id="swarm6Max" style="color:black; width:195px; height:30px" class="storebtn" align="right" onclick="buySwarm(6)">Cost: 10</button>
+					<button id="swarm6Buy" style="color:black; width:195px; height:30px" class="storebtn" align="right" onclick="buySwarm(6)">Cost: 10</button>
 				</td>
 			</tr>
-			<tr style="font-size: 16px" id="swarmRow7">
+			<tr style="font-size: 16px; visibility: hidden" id="swarmRow7">
 				<td id="swarm7" width="41%">
 					7th swarm: Hive Empress x1
 				</td>
 				<td>
-					<div id="swarm7count">0 (0)</div>
+					<div id="swarm7amount">0 (0)</div>
 				</td>
 				<td align="right" width="10%">
-					<button id="swarm7Max" style="color:black; width:195px; height:30px" class="storebtn" align="right" onclick="buySwarm(7)">Cost: 10</button>
+					<button id="swarm7Buy" style="color:black; width:195px; height:30px" class="storebtn" align="right" onclick="buySwarm(7)">Cost: 10</button>
 				</td>
 			</tr>
-			<tr style="font-size: 16px" id="swarmRow8">
+			<tr style="font-size: 16px; visibility: hidden" id="swarmRow8">
 				<td id="swarm8" width="41%">
 					8th swarm: Neuroprophet x1
 				</td>
 				<td>
-					<div id="swarm8count">0 (0)</div>
+					<div id="swarm8amount">0 (0)</div>
 				</td>
 				<td align="right" width="10%">
-					<button id="swarm8Max" style="color:black; width:195px; height:30px" class="storebtn" align="right" onclick="buySwarm(8)">Cost: 10</button>
+					<button id="swarm8Buy" style="color:black; width:195px; height:30px" class="storebtn" align="right" onclick="buySwarm(8)">Cost: 10</button>
 				</td>
 			</tr>
 		</table>
-				<table>
+		<table class="table" align="left" style="margin-left: 5%">
 			<tr style="font-size: 16px" id="softResets">
-				<th id="softReset1label" style="background-color:#FF0000; height:100px; width: 400px">
-					Unlock next Swarm
+				<th style="width: 250px;">
+					<div id="softReset1label">Unlock next Swarm<br>Requires: 20 Greater Queen</div>
 				</th>
-				<th style="background-color:#63a0e6; height:100px; width: 200px">
-					Boost your Swarms
-				</th>
+				<th style="width: 50px;"></th>
 			</tr>			
 			<tr style="font-size: 16px" id="softResets">
-				<td width="50%" style="background-color:#2bd350">
-					<div id="softReset1Cost">20 Greater Queen</div>
+				<td style="height: 50px; width: 250px;">
+					<div><button id="boostSwarm" style="color:black; width:250px; height:50px" class="storebtn" onclick="softReset1()" align="right">Reset your previous progress</button></div>
 				</td>
-				<td style="background-color:#c551f3">
-					
-				</td>
+				<td style="width: 50px;"></td>
 			</tr>
 		</table>
 		<div class="SaveLoad">
@@ -128,8 +124,9 @@
 		</div>
 	<script type="text/javascript" src="game/break_infinity.min.js"></script>
 	<script type="text/javascript" src="game/format.js"></script>
+	<script type="text/javascript" src="game/swarm.js"></script>
 	<script type="text/javascript" src="game/save_load_system.js"></script>
-	<script type="text/javascript" src="game/Swarm_scripts.js"></script>
-	<script type="text/javascript" src="game/Game.js"></script>
+	<script type="text/javascript" src="game/game.js"></script>
+	<script type="text/javascript" src="game/swarm_boosts.js"></script>	
 </body>
 </html>

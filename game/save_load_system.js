@@ -73,7 +73,14 @@ function get_save()
             player.swarm8.factor = new Decimal(player.swarm8.factor);
             player.swarm8.growth = new Decimal(player.swarm8.growth);
             player.swarm8.baseAmount = player.swarm8.baseAmount; 
-        
+
+            player.boost = player.boost;
+            player.BoostReqSwarm = player.BoostReqSwarm;
+            player.boostCost = player.boostCost;
+            player.boostCostUp = player.boostCostUp;
+            player.boostFactor = new Decimal("2");
+            player.boostFactorPerBoost = new Decimal("2");
+
             console.log("Loaded")
             initGame()
         }
@@ -162,7 +169,17 @@ function reset_save()
             growth: new Decimal("0"),
             baseAmount: 0
         },
+        boost: 0,
+        BoostReqSwarm: 4,
+        boostCost: 20,
+        boostCostUp: 20,
+        boostFactor: new Decimal("1"),
+        boostFactorPerBoost: new Decimal("1.5"),
     }
+    document.getElementById("swarmRow5").style = "font-size: 16px; visibility: hidden";
+    document.getElementById("swarmRow6").style = "font-size: 16px; visibility: hidden";
+    document.getElementById("swarmRow7").style = "font-size: 16px; visibility: hidden";
+    document.getElementById("swarmRow8").style = "font-size: 16px; visibility: hidden";
     initGame();
 
     console.log("Reseted");
