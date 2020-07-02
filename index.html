@@ -3,7 +3,7 @@
 <html>
 
 	<head>
-		<title>Чисто сайт</title>
+		<title>Swarm Game</title>
 		<link rel="stylesheet" type="text/css" href="game/styles.css">
 	</head>
 
@@ -25,7 +25,7 @@
 					<button id="swarm1Max" style="color:black; width:195px; height:30px" class="storebtn" align="right" onclick="buySwarm(1)">Cost: 10</button>
 				</td>
 			</tr>
-			<tr style="font-size: 16px" id="swarmRow1">
+			<tr style="font-size: 16px" id="swarmRow2">
 				<td id="swarm2" width="41%">
 					2nd swarm: Queen x1
 				</td>
@@ -36,7 +36,7 @@
 					<button id="swarm2Max" style="color:black; width:195px; height:30px" class="storebtn" align="right" onclick="buySwarm(2)">Cost: 10</button>
 				</td>
 			</tr>			
-			<tr style="font-size: 16px" id="swarmRow1">
+			<tr style="font-size: 16px" id="swarmRow3">
 				<td id="swarm3" width="41%">
 					3rd swarm: Nest x1
 				</td>
@@ -47,7 +47,7 @@
 					<button id="swarm3Max" style="color:black; width:195px; height:30px" class="storebtn" align="right" onclick="buySwarm(3)">Cost: 10</button>
 				</td>
 			</tr>
-			<tr style="font-size: 16px" id="swarmRow1">
+			<tr style="font-size: 16px" id="swarmRow4">
 				<td id="swarm4" width="41%">
 					4th swarm: Greater Queen x1
 				</td>
@@ -58,7 +58,7 @@
 					<button id="swarm4Max" style="color:black; width:195px; height:30px" class="storebtn" align="right" onclick="buySwarm(4)">Cost: 10</button>
 				</td>
 			</tr>
-			<tr style="font-size: 16px" id="swarmRow1">
+			<tr style="font-size: 16px" id="swarmRow5">
 				<td id="swarm5" width="41%">
 					5th swarm: Hive x1
 				</td>
@@ -69,7 +69,7 @@
 					<button id="swarm5Max" style="color:black; width:195px; height:30px" class="storebtn" align="right" onclick="buySwarm(5)">Cost: 10</button>
 				</td>
 			</tr>
-			<tr style="font-size: 16px" id="swarmRow1">
+			<tr style="font-size: 16px" id="swarmRow6">
 				<td id="swarm6" width="41%">
 					6th swarm: Hive Queen x1
 				</td>
@@ -80,7 +80,7 @@
 					<button id="swarm6Max" style="color:black; width:195px; height:30px" class="storebtn" align="right" onclick="buySwarm(6)">Cost: 10</button>
 				</td>
 			</tr>
-			<tr style="font-size: 16px" id="swarmRow1">
+			<tr style="font-size: 16px" id="swarmRow7">
 				<td id="swarm7" width="41%">
 					7th swarm: Hive Empress x1
 				</td>
@@ -91,7 +91,7 @@
 					<button id="swarm7Max" style="color:black; width:195px; height:30px" class="storebtn" align="right" onclick="buySwarm(7)">Cost: 10</button>
 				</td>
 			</tr>
-			<tr style="font-size: 16px" id="swarmRow1">
+			<tr style="font-size: 16px" id="swarmRow8">
 				<td id="swarm8" width="41%">
 					8th swarm: Neuroprophet x1
 				</td>
@@ -103,20 +103,13 @@
 				</td>
 			</tr>
 		</table>
-		<table class="table">			
-			<tr style="font-size: 16px" id="save_load">
-			<td align="left" width="20%">
-				<button id="save" style="color:black; width:195px; height:30px" class="storebtn" align="right" onclick="set_save(player)">Save</button>
-			</td>				
-			<td align="center" width="20%" style="transform: translate(-195px, 0)">
-				<button id="load" style="color:black; width:195px; height:30px" class="storebtn" align="right" onclick="get_save()">Load</button>
-			</td>
-			<td align="right" width="10%">
-				<button id="reset" style="color:black; width:195px; height:30px" class="storebtn" align="right" onclick="reset_save()">Reset</button>
-			</td>
-		</tr>
-	</table>
-	</div>
+		<table class="table" style="margin-top: 45%">		
+			<tr style="font-size: 16px">
+				<td><div><button id="save" class="storebtn" onclick="set_save(player)" style="color:black; width: 200px; height: 35px; font-size: 17px">Save</button></div></td>
+				<td><div><button id="load" class="storebtn" onclick="get_save()" style="color:black; width: 200px; height: 35px; font-size: 17px">Load</button></div></td>
+				<td><div><button id="rename" class="storebtn" onclick="reset_save()" style="color:black; width: 150px; height: 35px; font-size:17px">Reset</button></div></td>
+			</tr>
+		</table>
 	<script type="text/javascript" src="game/break_infinity.min.js"></script>
 	<script type="text/javascript" src="game/format.js"></script>
 	<script type="text/javascript" src="game/save_load_system.js"></script>

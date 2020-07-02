@@ -1,6 +1,6 @@
 player =
 {
-    meat: new Decimal("1e100000"),
+    meat: new Decimal("1e1"),
     meatPerSec: new Decimal("0"),
     factorPerTen: new Decimal("2"),
     swarm1: 
