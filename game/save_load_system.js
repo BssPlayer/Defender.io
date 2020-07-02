@@ -75,6 +75,7 @@ function get_save()
             player.swarm8.baseAmount = player.swarm8.baseAmount; 
         
             console.log("Loaded")
+            initGame()
         }
     } 
     catch(e) { }
@@ -82,7 +83,7 @@ function get_save()
 
 function reset_save()
 {
-    localStorage.removeItem(btoa("swarm_game_save"));
+    //localStorage.removeItem(btoa("swarm_game_save"));
 
     player =
     {
@@ -162,7 +163,23 @@ function reset_save()
             baseAmount: 0
         },
     }
-    /* if (player.meat == undefined) player.meat = new Decimal("1e1");
+    initGame();
+
+    console.log("Reseted");
+}
+var timer1; var timer2;
+function initGame()
+{
+    if (timer1 != null)
+    clearInterval(timer1);
+    if (timer2 != null)
+    clearInterval(timer2);
+
+    timer1 = setInterval(gameUpdate, 50);
+    timer2 = setInterval(swarmUpdate, 100);   
+}
+
+/* if (player.meat == undefined) player.meat = new Decimal("1e1");
     if (player.meatPerSec == undefined) player.meatPerSec = new Decimal("0");
     if (player.factorPerTen == undefined) player.factorPerTen = new Decimal("2");
     if (player.swarm1 == undefined) player.swarm1 =
@@ -237,6 +254,3 @@ function reset_save()
         growth: new Decimal("0"),
         baseAmount: 0
     }; */
-
-    console.log("Reseted");
-}

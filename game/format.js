@@ -156,13 +156,8 @@ function formatValue(notation, value, places, placesUnder1000)
                     power++;
                 }
             } 
-            else matissa = ""
-            if (power > 100000) 
-            {
-                //if (player.options.commas != "Commas") return matissa + "e" + formatValue(player.options.commas, power, 3, 3)
-                if (power >= 1e12) return matissa + "e" + formatValue("Standard", power, 3, 3)
-                return matissa + "e" + getFullExpansion(power);
-            }
+            else matissa = ""      
+            if (power >= 1e6) return matissa + "e" + formatValue("Standard", power, 3, 3)
             return matissa + "e" + power;
         }
         if (matissa >= 1000) 
@@ -205,7 +200,7 @@ function getFullExpansion(num)
 {
 	if (num === null) return "NaN"
 	if (isNaN(num)) return "NaN"
-	if (!break_infinity_js && typeof(num) != "number") if (isNaN(num.logarithm)) return "NaN"
+	if (typeof(num) != "number") if (isNaN(num.logarithm)) return "NaN"
 	if (num > 1e12) return shorten(num)
 }
 

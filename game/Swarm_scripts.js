@@ -13,7 +13,6 @@ function buySwarm(tier)
     }
 }
 
-setInterval(swarmUpdate, 100);
 function swarmUpdate()
 {
     player.meat = player.meat.plus(player.meatPerSec.div(10));

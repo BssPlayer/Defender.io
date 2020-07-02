@@ -1,6 +1,6 @@
 player =
 {
-    meat: new Decimal("1e1"),
+    meat: new Decimal("1e100000"),
     meatPerSec: new Decimal("0"),
     factorPerTen: new Decimal("2"),
     swarm1: 
@@ -76,8 +76,7 @@ player =
         baseAmount: 0
     },
 }
-
-setInterval(gameUpdate, 50);
+initGame();
 function gameUpdate()
 {
     document.getElementById("meatAmount").textContent = shorten(player.meat);
