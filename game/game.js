@@ -91,7 +91,7 @@ function gameUpdate()
     player.boostFactor = player.boostFactorPerBoost.pow(Math.max(0, player.boost - 4));
     for(var a = 1; a < 9; a++)
     { 
-        player["swarm" + a].factor = player.boostFactor.mul(Math.max(1, player.factorPerTen.mul(Math.floor(player["swarm" + a].baseAmount / 10))));
+        player["swarm" + a].factor = player.boostFactor.mul(Math.max(1, player.factorPerTen.pow(Math.floor(player["swarm" + a].baseAmount / 10))));
     }
 
     document.getElementById('swarm1').textContent = '1st swarm: Drone x' + shorten(player.swarm1.factor);
