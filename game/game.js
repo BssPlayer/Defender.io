@@ -115,7 +115,7 @@ function gameUpdate()
         player["swarm" + a].factor = player.boostFactor.mul(Math.max(1, player.factorPerTen.pow(Math.floor(player["swarm" + a].baseAmount / 10))));
     }
 
-    document.getElementById('gathering').textContent = '1st swarm: Drone x' + shorten(player.gathering.factor);
+    document.getElementById('gathering').textContent = 'Improve gathering x' + shorten(player.gathering.factor);
 
     document.getElementById('swarm1').textContent = '1st swarm: Drone x' + shorten(player.swarm1.factor);
     document.getElementById('swarm2').textContent = '2nd swarm: Queen x' + shorten(player.swarm2.factor);
