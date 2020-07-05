@@ -1,3 +1,13 @@
+function buyGathering()
+{
+    if (player.meat.gte(player.gathering.cost))
+    {
+        player.meat = player.meat.minus(player.gathering.cost);
+        player.gathering.amount++;
+        player.gathering.cost = player.gathering.cost.mul(player.gathering.costUp);
+    }
+}
+
 function buySwarm(tier)
 {
     if (player.meat.gte(player["swarm" + tier].cost))
@@ -14,7 +24,7 @@ function buySwarm(tier)
 
 function swarmUpdate()
 {
-    player.meat = player.meat.plus(player.meatPerSec.div(10).mul("1e4242424"));
+    player.meat = player.meat.plus(player.meatPerSec.div(10));
     for(var a = 1; a < 8; a++)
     { 
         player["swarm" + a].amount = player["swarm" + a].amount.plus(player["swarm" + a].growth.div(30+(3*a)));

@@ -27,11 +27,13 @@ ul,
 ol,
 table,
 pre,
-dl {
+dl 
+{
     margin: 0 0 3px;
 }
 
-table {
+table 
+{
   border-spacing: 0
 }
 

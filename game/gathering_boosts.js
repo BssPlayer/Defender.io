@@ -1,6 +1,6 @@
-function softReset1()
+function softReset2()
 { 
-    if (player["swarm" + player.boostReqSwarm].baseAmount >= player.boostCost)
+    if (player.swarm8.baseAmount >= player.boostGatheringCost)
     {
         player.meat = new Decimal("1e1");
         player.meatPerSec = new Decimal("0");
@@ -88,22 +88,19 @@ function softReset1()
             baseAmount: 0
         };
 
-        player.boost = player.boost + 1;
-        player.boostReqSwarm = player.boostReqSwarm;
+        player.boost = 0;
+        player.boostReqSwarm = 4;
         player.boostCost = 20;
         player.boostCostUp = 20;
         player.boostFactor = new Decimal("1");
         player.boostFactorPerBoost = new Decimal("1.5");
 
-        if (player.boost < 4)
-        {
-            player.boostReqSwarm = 4 + player.boost;
-            player.boostCost = 20;
-        }
-        if (player.boost >= 4)
-        {
-            player.boostReqSwarm = 8;
-            player.boostCost = 20 + 20 * (player.boost - 4);
-        }
+        player.boostGathering = player.boostGathering + 1;
+        player.boostGatheringCost = 50;
+        player.boostGatheringCostUp = 50;
+        player.boostGatheringFactor = new Decimal("1");
+        player.factorPerBoostGathering = new Decimal("1.25");
+ 
+        player.boostGatheringCost = 50 + player.boostGatheringCostUp * player.boostGathering;
     }
 }

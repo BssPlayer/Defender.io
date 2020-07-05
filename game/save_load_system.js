@@ -16,6 +16,13 @@ function get_save()
 
             player.meat = new Decimal(player.meat);
             player.meatPerSec = new Decimal(player.meatPerSec);
+
+            player.gathering.cost = new Decimal(player.gathering.cost),
+            player.gathering.costUp = new Decimal(player.gathering.costUp),
+            player.gathering.factor = new Decimal(player.gathering.factor),
+            player.gathering.factorPerImprove = new Decimal(player.gathering.factorPerImprove),
+            player.gathering.amount = player.gathering.amount; 
+
             player.factorPerTen = new Decimal(player.factorPerTen);
 
             player.swarm1.cost = new Decimal(player.swarm1.cost);
@@ -75,11 +82,17 @@ function get_save()
             player.swarm8.baseAmount = player.swarm8.baseAmount; 
 
             player.boost = player.boost;
-            player.BoostReqSwarm = player.BoostReqSwarm;
+            player.boostReqSwarm = player.boostReqSwarm;
             player.boostCost = player.boostCost;
             player.boostCostUp = player.boostCostUp;
             player.boostFactor = new Decimal("2");
             player.boostFactorPerBoost = new Decimal("2");
+
+            player.boostGathering = player.boostGathering;
+            player.boostGatheringCost = player.boostGatheringCost;
+            player.boostGatheringCostUp = player.boostGatheringCostUp;
+            player.boostGatheringFactor = new Decimal(player.boostGatheringFactor);
+            player.factorPerBoostGathering = new Decimal(player.factorPerBoostGathering);
 
             console.log("Loaded")
             initGame()
@@ -96,6 +109,16 @@ function reset_save()
     {
         meat: new Decimal("1e1"),
         meatPerSec: new Decimal("0"),
+
+        gathering: 
+        {
+            cost: new Decimal("1e3"),
+            costUp: new Decimal("1e1"),
+            factor: new Decimal("1"),
+            factorPerImprove: new Decimal("2"),
+            amount: 0,
+        },
+    
         factorPerTen: new Decimal("2"),
         swarm1: 
         {
@@ -169,12 +192,19 @@ function reset_save()
             growth: new Decimal("0"),
             baseAmount: 0
         },
+
         boost: 0,
-        BoostReqSwarm: 4,
+        boostReqSwarm: 4,
         boostCost: 20,
         boostCostUp: 20,
         boostFactor: new Decimal("1"),
         boostFactorPerBoost: new Decimal("1.5"),
+
+        boostGathering: 0,
+        boostGatheringCost: 50,
+        boostGatheringCostUp: 50,
+        boostGatheringFactor: new Decimal("1"),
+        factorPerBoostGathering: new Decimal("1.25"),
     }
     document.getElementById("swarmRow5").style = "font-size: 16px; visibility: hidden";
     document.getElementById("swarmRow6").style = "font-size: 16px; visibility: hidden";

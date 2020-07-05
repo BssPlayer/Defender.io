@@ -3,6 +3,16 @@ player =
 {
     meat: new Decimal("1e1"),
     meatPerSec: new Decimal("0"),
+
+    gathering: 
+    {
+        cost: new Decimal("1e3"),
+        costUp: new Decimal("1e1"),
+        factor: new Decimal("1"),
+        factorPerImprove: new Decimal("2"),
+        amount: 0,
+    },
+
     factorPerTen: new Decimal("2"),
     swarm1: 
     {
@@ -76,23 +86,36 @@ player =
         growth: new Decimal("0"),
         baseAmount: 0
     },
+
     boost: 0,
-    BoostReqSwarm: 4,
+    boostReqSwarm: 4,
     boostCost: 20,
     boostCostUp: 20,
     boostFactor: new Decimal("1"),
     boostFactorPerBoost: new Decimal("1.5"),
+
+    boostGathering: 0,
+    boostGatheringCost: 50,
+    boostGatheringCostUp: 50,
+    boostGatheringFactor: new Decimal("1"),
+    factorPerBoostGathering: new Decimal("1.25"),
 }
 initGame();
 function gameUpdate()
 {
     document.getElementById("meatAmount").textContent = shorten(player.meat);
+    
+    player.boostGatheringFactor = player.factorPerBoostGathering.pow(Math.max(0, player.boostGathering));
+    player.gathering.factorPerImprove = player.boostGatheringFactor.mul(2);
+    player.gathering.factor = player.gathering.factorPerImprove.pow(Math.max(0, player.gathering.amount));
 
     player.boostFactor = player.boostFactorPerBoost.pow(Math.max(0, player.boost - 4));
     for(var a = 1; a < 9; a++)
     { 
         player["swarm" + a].factor = player.boostFactor.mul(Math.max(1, player.factorPerTen.pow(Math.floor(player["swarm" + a].baseAmount / 10))));
     }
+
+    document.getElementById('gathering').textContent = '1st swarm: Drone x' + shorten(player.gathering.factor);
 
     document.getElementById('swarm1').textContent = '1st swarm: Drone x' + shorten(player.swarm1.factor);
     document.getElementById('swarm2').textContent = '2nd swarm: Queen x' + shorten(player.swarm2.factor);
@@ -103,7 +126,7 @@ function gameUpdate()
     document.getElementById('swarm7').textContent = '7th swarm: Hive Empress x' + shorten(player.swarm7.factor);
     document.getElementById('swarm8').textContent = '8th swarm: Neuroprophet x' + shorten(player.swarm8.factor);
 
-    player.meatPerSec = player.swarm1.amount.mul(player.swarm1.factor);
+    player.meatPerSec = player.swarm1.amount.mul(player.swarm1.factor).mul(player.gathering.factor);
     player.swarm1.growth = player.swarm2.amount.mul(player.swarm2.factor);
     player.swarm2.growth = player.swarm3.amount.mul(player.swarm3.factor);
     player.swarm3.growth = player.swarm4.amount.mul(player.swarm4.factor);
@@ -113,6 +136,18 @@ function gameUpdate()
     player.swarm7.growth = player.swarm8.amount.mul(player.swarm8.factor);
 
     document.getElementById('meatPerSec').textContent = shorten(player.meatPerSec);  
+
+    document.getElementById("gatheringAmount").textContent = shortenCount(player.gathering.amount);
+    document.getElementById("gatheringBuy").textContent = 'Cost: ' + shortenCosts(player.gathering.cost) + " meat";
+
+    if (player.meat.gte(player.gathering.cost)) 
+    {
+        document.getElementById("gatheringBuy").className = 'storebtn';
+    } 
+    else 
+    {
+        document.getElementById("gatheringBuy").className = 'unavailablebtn';
+    }
 
     for(var a = 1; a < 9; a++)
     { 
@@ -132,11 +167,15 @@ function gameUpdate()
     }
 
     if (player.boost >= 1) document.getElementById("swarmRow5").style = "font-size: 16px; visibility: visible";
+    else document.getElementById("swarmRow5").style = "font-size: 16px; visibility: hidden";
     if (player.boost >= 2) document.getElementById("swarmRow6").style = "font-size: 16px; visibility: visible";
+    else document.getElementById("swarmRow6").style = "font-size: 16px; visibility: hidden";
     if (player.boost >= 3) document.getElementById("swarmRow7").style = "font-size: 16px; visibility: visible";
+    else document.getElementById("swarmRow7").style = "font-size: 16px; visibility: hidden";
     if (player.boost >= 4) document.getElementById("swarmRow8").style = "font-size: 16px; visibility: visible";
+    else document.getElementById("swarmRow8").style = "font-size: 16px; visibility: hidden";
 
-    if (player["swarm" + player.BoostReqSwarm].baseAmount >= player.boostCost) 
+    if (player["swarm" + player.boostReqSwarm].baseAmount >= player.boostCost) 
     {
         document.getElementById("boostSwarm").className = 'storebtn';
     } 
@@ -146,5 +185,15 @@ function gameUpdate()
     }
     if (player.boost < 4) document.getElementById("softReset1label").textContent = "Unlock next Swarm";
     if (player.boost >= 4) document.getElementById("softReset1label").textContent = "Swarm Boost";
-    document.getElementById("softReset1label").innerHTML += '<br />' + 'Requires: ' + player.boostCost + ' ' + SwarmNames[player.BoostReqSwarm - 1];
+    document.getElementById("softReset1label").innerHTML += '<br />' + 'Requires: ' + player.boostCost + ' ' + SwarmNames[player.boostReqSwarm - 1];
+
+    if (player.swarm8.baseAmount >= player.boostGatheringCost) 
+    {
+        document.getElementById("boostGathering").className = 'storebtn';
+    } 
+    else 
+    {
+        document.getElementById("boostGathering").className = 'unavailablebtn';
+    }
+    document.getElementById("softReset2label").innerHTML = 'Boost Gathering<br /> Requires: ' + player.boostGatheringCost + ' Neuroprophet';
 }
