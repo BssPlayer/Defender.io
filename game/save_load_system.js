@@ -105,7 +105,7 @@ function reset_save()
 {
     //localStorage.removeItem(btoa("swarm_game_save"));
 
-    player.meat = init.meat;
+    player.meat = init.meat;    
     player.meatPerSec = init.meatPerSec;
 
     player.gathering.cost = init.gathering.cost;
@@ -201,6 +201,6 @@ function initGame()
     if (timer2 != null)
     clearInterval(timer2);
 
-    timer1 = setInterval(gameUpdate, 50);
+    timer1 = setInterval(gameUpdate, 10);
     timer2 = setInterval(swarmUpdate, 10);   
 }

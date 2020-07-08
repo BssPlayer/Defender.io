@@ -1,4 +1,6 @@
 var SwarmNames = ["Drone", "Queen", "Nest", "Greater Queen", "Hive", "Hive Queen", "Hive Empress", "Neuroprophet"]
+inf = new Decimal("2").pow(1024);
+
 init =
 {
     meat: new Decimal("1e1"),
@@ -308,4 +310,9 @@ function gameUpdate()
         document.getElementById("boostGathering").className = 'unavailablebtn';
     }
     document.getElementById("softReset2label").innerHTML = 'Boost Gathering<br /> Requires: ' + player.boostGatheringCost + ' Neuroprophet';
+
+    var percent = Math.min((Decimal.log10(player.meat) / Decimal.log10(inf) * 100), 100).toFixed(2) + "%";
+
+    document.getElementById("progressbar").style.width = percent;
+    document.getElementById("progresspercent").textContent = shorten((Decimal.log10(player.meat)/Decimal.log10(inf)) * 100) + "%";
 }

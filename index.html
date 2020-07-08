@@ -8,11 +8,10 @@
 	</head>
 
 <body id="body" style="height: 90vh;">
-	<div align="center" style="margin-top: 50px">
-		<div>
+		<div align="center" style="margin-top: 50px">
 			<p>You have <span id="meatAmount" style="font-size:30px; color: rgb(221, 121, 38)">0</span> meat.</p>
+			<p>You are getting <span id="meatPerSec">0</span> meat per second.</p>
 		</div>
-		<p>You are getting <span id="meatPerSec">0</span> meat per second.</p>
 		<table class="table" style="margin-bottom: 10px;">
 			<tr style="font-size: 16px" id="gatheringRow1">
 				<td id="gathering" width="41%">
@@ -140,7 +139,8 @@
 				</td>
 			</tr>
 		</table>
-		<table class="table" align="left" style="margin-left: 5%">
+		<div align="center">
+		<table class="table">
 			<tr style="font-size: 16px" id="softResets">
 				<th style="width: 250px;">
 					<div id="softReset1label">Unlock next Swarm<br>Requires: 20 Greater Queen</div>
@@ -160,11 +160,14 @@
 				</td>
 			</tr>
 		</table>
-		<div class="SaveLoad">
-			<button id="save" class="saveloadbtn" onclick="set_save(player)" style="color:black; display: inline">Save</button>
-			<button id="load" class="saveloadbtn" onclick="get_save()" style="color:black; display: inline">Load</button>
-			<button id="rename" class="storebtn" onclick="reset_save()" style="color:black; display: inline">Reset</button>
 		</div>
+		<div class="save load" id="loadmenu">
+			<button id="save" class="saveloadbtn" onclick="set_save(player)" style="color:black">Save</button>
+			<button id="load" class="saveloadbtn" onclick="get_save()" style="color:black">Load</button>
+			<button id="reset" class="storebtn" onclick="reset_save()" style="color:black">Reset</button>
+		</div>
+		<div id="progress"><div id="progressbar"><span id="progresspercent" ach-tooltip="Percentage until Infinity Swarm">0%</span></div></div>
+	
 	<script type="text/javascript" src="game/break_infinity.min.js"></script>
 	<script type="text/javascript" src="game/format.js"></script>
 	<script type="text/javascript" src="game/swarm.js"></script>
