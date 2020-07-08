@@ -211,7 +211,7 @@ shorten = function (meat)
 
 shortenCosts = function (meat)
 {
-    return formatValue("Mixed scientific", meat, 2, 0);
+    return formatValue("Mixed scientific", meat, 0, 0);
 };
 
 shortenCount = function (factor)

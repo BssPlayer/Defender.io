@@ -1,4 +1,106 @@
 var SwarmNames = ["Drone", "Queen", "Nest", "Greater Queen", "Hive", "Hive Queen", "Hive Empress", "Neuroprophet"]
+init =
+{
+    meat: new Decimal("1e1"),
+    meatPerSec: new Decimal("0"),
+
+    gathering:
+    {
+        cost: new Decimal("1e3"),
+        costUp: new Decimal("1e1"),
+        factor: new Decimal("1"),
+        factorPerImprove: new Decimal("2"),
+        amount: 0,
+    },
+
+    factorPerTen: new Decimal("2"),
+    swarm1: 
+    {
+        cost: new Decimal("1e1"),
+        costUp: new Decimal("1e3"),
+        amount: new Decimal("0"),
+        factor: new Decimal("1"),
+        growth: new Decimal("0"),
+        baseAmount: 0
+    },    
+    swarm2: 
+    {
+        cost: new Decimal("1e2"),
+        costUp: new Decimal("1e4"),
+        amount: new Decimal("0"),
+        factor: new Decimal("1"),
+        growth: new Decimal("0"),
+        baseAmount: 0
+    },    
+    swarm3: 
+    {
+        cost: new Decimal("1e4"),
+        costUp: new Decimal("1e5"),
+        amount: new Decimal("0"),
+        factor: new Decimal("1"),
+        growth: new Decimal("0"),
+        baseAmount: 0
+    },
+    swarm4: 
+    {
+        cost: new Decimal("1e6"),
+        costUp: new Decimal("1e6"),
+        amount: new Decimal("0"),
+        factor: new Decimal("1"),
+        growth: new Decimal("0"),
+        baseAmount: 0
+    },    
+    swarm5: 
+    {
+        cost: new Decimal("1e9"),
+        costUp: new Decimal("1e8"),
+        amount: new Decimal("0"),
+        factor: new Decimal("1"),
+        growth: new Decimal("0"),
+        baseAmount: 0
+    },    
+    swarm6: 
+    {
+        cost: new Decimal("1e13"),
+        costUp: new Decimal("1e10"),
+        amount: new Decimal("0"),
+        factor: new Decimal("1"),
+        growth: new Decimal("0"),
+        baseAmount: 0
+    },    
+    swarm7: 
+    {
+        cost: new Decimal("1e18"),
+        costUp: new Decimal("1e12"),
+        amount: new Decimal("0"),
+        factor: new Decimal("1"),
+        growth: new Decimal("0"),
+        baseAmount: 0
+    },    
+    swarm8: 
+    {
+        cost: new Decimal("1e24"),
+        costUp: new Decimal("1e15"),
+        amount: new Decimal("0"),
+        factor: new Decimal("1"),
+        growth: new Decimal("0"),
+        baseAmount: 0
+    },
+
+    boost: 0,
+    boostReqSwarm: 4,
+    boostCost: 20,
+    boostCostUp: 20,
+    boostFactor: new Decimal("1"),
+    boostFactorPerBoost: new Decimal("1.5"),
+
+    boostGathering: 0,
+    boostGatheringCost: 50,
+    boostGatheringCostUp: 50,
+    boostGatheringFactor: new Decimal("1"),
+    factorPerBoostGathering: new Decimal("1.25"),
+};
+
 player =
 {
     meat: new Decimal("1e1"),
@@ -99,10 +201,11 @@ player =
     boostGatheringCostUp: 50,
     boostGatheringFactor: new Decimal("1"),
     factorPerBoostGathering: new Decimal("1.25"),
-}
+};
 initGame();
 function gameUpdate()
 {
+
     document.getElementById("meatAmount").textContent = shorten(player.meat);
     
     player.boostGatheringFactor = player.factorPerBoostGathering.pow(Math.max(0, player.boostGathering));
@@ -152,7 +255,6 @@ function gameUpdate()
     for(var a = 1; a < 9; a++)
     { 
         document.getElementById("swarm" + a + "amount").textContent = shortenCount(player["swarm" + a].amount) + ' (' + player["swarm" + a].baseAmount % 10 + ')';
-    
         document.getElementById("swarm" + a + "Buy").textContent = 'Cost: ' + shortenCosts(player["swarm" + a].cost) + " meat";
 
         if (player.meat.gte(player["swarm" + a].cost)) 
@@ -163,7 +265,17 @@ function gameUpdate()
         {
             document.getElementById("swarm" + a + "Buy").className = 'unavailablebtn';
         }
+
+        document.getElementById("swarm" + a + "BuyMax").textContent = 'Cost: ' + shortenCosts(player["swarm" + a].cost * (10 - player["swarm" + a].baseAmount % 10)) + " meat";
         
+        if (player.meat.gte(player["swarm" + a].cost * (10 - player["swarm" + a].baseAmount % 10))) 
+        {
+            document.getElementById("swarm" + a + "BuyMax").className = 'storebtn';
+        } 
+        else 
+        {
+            document.getElementById("swarm" + a + "BuyMax").className = 'unavailablebtn';
+        } 
     }
 
     if (player.boost >= 1) document.getElementById("swarmRow5").style = "font-size: 16px; visibility: visible";
