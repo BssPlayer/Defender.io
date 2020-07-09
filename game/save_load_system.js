@@ -13,86 +13,86 @@ function get_save()
         {
             dimensionSave = JSON.parse(atob(dimensionSave, function(k, v) { return (v === Infinity) ? "Infinity" : v; }))
             //player = dimensionSave;
-            console.log(dimensionSave);
-            if(player.meat === undefined) player.meat = init.meat; else player.meat = new Decimal(dimensionSave.meat);
-            if(player.meatPerSec === undefined) player.meat = init.meatPerSec; else player.meatPerSec = new Decimal(dimensionSave.meatPerSec);
 
-            if(player.gathering.cost === undefined) player.gathering.cost = init.gathering.cost; else player.gathering.cost = new Decimal(dimensionSave.gathering.cost);
-            if(player.gathering.costUp === undefined) player.gathering.costUp = init.gathering.costUp; else player.gathering.costUp = new Decimal(dimensionSave.gathering.costUp);
-            if(player.gathering.factor === undefined) player.gathering.factor = init.gathering.factor; else player.gathering.factor = new Decimal(dimensionSave.gathering.factor);
-            if(player.gathering.factorPerImprove === undefined) player.gathering.factorPerImprove = init.gathering.factorPerImprove; else player.gathering.factorPerImprove = new Decimal(dimensionSave.gathering.factorPerImprove);
-            if(player.gathering.amount === undefined) player.gathering.amount = init.gathering.amount; else player.gathering.amount = dimensionSave.gathering.amount;
+            if(dimensionSave.meat === undefined) player.meat = init.meat; else player.meat = new Decimal(dimensionSave.meat);
+            if(dimensionSave.meatPerSec === undefined) player.meat = init.meatPerSec; else player.meatPerSec = new Decimal(dimensionSave.meatPerSec);
 
-            if(player.factorPerTen === undefined) player.factorPerTen = init.factorPerTen; else player.factorPerTen = new Decimal(dimensionSave.factorPerTen);
+            if(dimensionSave.gathering.cost === undefined) player.gathering.cost = init.gathering.cost; else player.gathering.cost = new Decimal(dimensionSave.gathering.cost);
+            if(dimensionSave.gathering.costUp === undefined) player.gathering.costUp = init.gathering.costUp; else player.gathering.costUp = new Decimal(dimensionSave.gathering.costUp);
+            if(dimensionSave.gathering.factor === undefined) player.gathering.factor = init.gathering.factor; else player.gathering.factor = new Decimal(dimensionSave.gathering.factor);
+            if(dimensionSave.gathering.factorPerImprove === undefined) player.gathering.factorPerImprove = init.gathering.factorPerImprove; else player.gathering.factorPerImprove = new Decimal(dimensionSave.gathering.factorPerImprove);
+            if(dimensionSave.gathering.amount === undefined) player.gathering.amount = init.gathering.amount; else player.gathering.amount = dimensionSave.gathering.amount;
 
-            if(player.swarm1.cost === undefined) player.swarm1.cost = init.swarm1.cost; else player.swarm1.cost = new Decimal(dimensionSave.swarm1.cost);
-            if(player.swarm1.costUp === undefined) player.swarm1.costUp = init.swarm1.costUp; else player.swarm1.costUp = new Decimal(dimensionSave.swarm1.costUp);
-            if(player.swarm1.amount === undefined) player.swarm1.amount = init.swarm1.amount; else player.swarm1.amount = new Decimal(dimensionSave.swarm1.amount);
-            if(player.swarm1.factor === undefined) player.swarm1.factor = init.swarm1.factor; else player.swarm1.factor = new Decimal(dimensionSave.swarm1.factor);
-            if(player.swarm1.growth === undefined) player.swarm1.growth = init.swarm1.growth; else player.swarm1.growtheat = new Decimal(dimensionSave.swarm1.growth);
-            if(player.swarm1.baseAmount === undefined) player.swarm1.baseAmount = init.swarm1.baseAmount; else player.swarm1.baseAmount = dimensionSave.swarm1.baseAmount;
-            
-            if(player.swarm2.cost === undefined) player.swarm2.cost = init.swarm2.cost; else player.swarm2.cost = new Decimal(dimensionSave.swarm2.cost);
-            if(player.swarm2.costUp === undefined) player.swarm2.costUp = init.swarm2.costUp; else player.swarm2.costUp = new Decimal(dimensionSave.swarm2.costUp);
-            if(player.swarm2.amount === undefined) player.swarm2.amount = init.swarm2.amount; else player.swarm2.amount = new Decimal(dimensionSave.swarm2.amount);
-            if(player.swarm2.factor === undefined) player.swarm2.factor = init.swarm2.factor; else player.swarm2.factor = new Decimal(dimensionSave.swarm2.factor);
-            if(player.swarm2.growth === undefined) player.swarm2.growth = init.swarm2.growth; else player.swarm2.growtheat = new Decimal(dimensionSave.swarm2.growth);
-            if(player.swarm2.baseAmount === undefined) player.swarm2.baseAmount = init.swarm2.baseAmount; else player.swarm2.baseAmount = dimensionSave.swarm2.baseAmount;
-            
-            if(player.swarm3.cost === undefined) player.swarm3.cost = init.swarm3.cost; else player.swarm3.cost = new Decimal(dimensionSave.swarm3.cost);
-            if(player.swarm3.costUp === undefined) player.swarm3.costUp = init.swarm3.costUp; else player.swarm3.costUp = new Decimal(dimensionSave.swarm3.costUp);
-            if(player.swarm3.amount === undefined) player.swarm3.amount = init.swarm3.amount; else player.swarm3.amount = new Decimal(dimensionSave.swarm3.amount);
-            if(player.swarm3.factor === undefined) player.swarm3.factor = init.swarm3.factor; else player.swarm3.factor = new Decimal(dimensionSave.swarm3.factor);
-            if(player.swarm3.growth === undefined) player.swarm3.growth = init.swarm3.growth; else player.swarm3.growtheat = new Decimal(dimensionSave.swarm3.growth);
-            if(player.swarm3.baseAmount === undefined) player.swarm3.baseAmount = init.swarm3.baseAmount; else player.swarm3.baseAmount = dimensionSave.swarm3.baseAmount;
-            
-            if(player.swarm4.cost === undefined) player.swarm4.cost = init.swarm4.cost; else player.swarm4.cost = new Decimal(dimensionSave.swarm4.cost);
-            if(player.swarm4.costUp === undefined) player.swarm4.costUp = init.swarm4.costUp; else player.swarm4.costUp = new Decimal(dimensionSave.swarm4.costUp);
-            if(player.swarm4.amount === undefined) player.swarm4.amount = init.swarm4.amount; else player.swarm4.amount = new Decimal(dimensionSave.swarm4.amount);
-            if(player.swarm4.factor === undefined) player.swarm4.factor = init.swarm4.factor; else player.swarm4.factor = new Decimal(dimensionSave.swarm4.factor);
-            if(player.swarm4.growth === undefined) player.swarm4.growth = init.swarm4.growth; else player.swarm4.growtheat = new Decimal(dimensionSave.swarm4.growth);
-            if(player.swarm4.baseAmount === undefined) player.swarm4.baseAmount = init.swarm4.baseAmount; else player.swarm4.baseAmount = dimensionSave.swarm4.baseAmount;
-            
-            if(player.swarm5.cost === undefined) player.swarm5.cost = init.swarm5.cost; else player.swarm5.cost = new Decimal(dimensionSave.swarm5.cost);
-            if(player.swarm5.costUp === undefined) player.swarm5.costUp = init.swarm5.costUp; else player.swarm5.costUp = new Decimal(dimensionSave.swarm5.costUp);
-            if(player.swarm5.amount === undefined) player.swarm5.amount = init.swarm5.amount; else player.swarm5.amount = new Decimal(dimensionSave.swarm5.amount);
-            if(player.swarm5.factor === undefined) player.swarm5.factor = init.swarm5.factor; else player.swarm5.factor = new Decimal(dimensionSave.swarm5.factor);
-            if(player.swarm5.growth === undefined) player.swarm5.growth = init.swarm5.growth; else player.swarm5.growtheat = new Decimal(dimensionSave.swarm5.growth);
-            if(player.swarm5.baseAmount === undefined) player.swarm5.baseAmount = init.swarm5.baseAmount; else player.swarm5.baseAmount = dimensionSave.swarm5.baseAmount;
-            
-            if(player.swarm6.cost === undefined) player.swarm6.cost = init.swarm6.cost; else player.swarm6.cost = new Decimal(dimensionSave.swarm6.cost);
-            if(player.swarm6.costUp === undefined) player.swarm6.costUp = init.swarm6.costUp; else player.swarm6.costUp = new Decimal(dimensionSave.swarm6.costUp);
-            if(player.swarm6.amount === undefined) player.swarm6.amount = init.swarm6.amount; else player.swarm6.amount = new Decimal(dimensionSave.swarm6.amount);
-            if(player.swarm6.factor === undefined) player.swarm6.factor = init.swarm6.factor; else player.swarm6.factor = new Decimal(dimensionSave.swarm6.factor);
-            if(player.swarm6.growth === undefined) player.swarm6.growth = init.swarm6.growth; else player.swarm6.growtheat = new Decimal(dimensionSave.swarm6.growth);
-            if(player.swarm6.baseAmount === undefined) player.swarm6.baseAmount = init.swarm6.baseAmount; else player.swarm6.baseAmount = dimensionSave.swarm6.baseAmount;
-            
-            if(player.swarm7.cost === undefined) player.swarm7.cost = init.swarm7.cost; else player.swarm7.cost = new Decimal(dimensionSave.swarm7.cost);
-            if(player.swarm7.costUp === undefined) player.swarm7.costUp = init.swarm7.costUp; else player.swarm7.costUp = new Decimal(dimensionSave.swarm7.costUp);
-            if(player.swarm7.amount === undefined) player.swarm7.amount = init.swarm7.amount; else player.swarm7.amount = new Decimal(dimensionSave.swarm7.amount);
-            if(player.swarm7.factor === undefined) player.swarm7.factor = init.swarm7.factor; else player.swarm7.factor = new Decimal(dimensionSave.swarm7.factor);
-            if(player.swarm7.growth === undefined) player.swarm7.growth = init.swarm7.growth; else player.swarm7.growtheat = new Decimal(dimensionSave.swarm7.growth);
-            if(player.swarm7.baseAmount === undefined) player.swarm7.baseAmount = init.swarm7.baseAmount; else player.swarm7.baseAmount = dimensionSave.swarm7.baseAmount;
-            
-            if(player.swarm8.cost === undefined) player.swarm8.cost = init.swarm8.cost; else player.swarm8.cost = new Decimal(dimensionSave.swarm8.cost);
-            if(player.swarm8.costUp === undefined) player.swarm8.costUp = init.swarm8.costUp; else player.swarm8.costUp = new Decimal(dimensionSave.swarm8.costUp);
-            if(player.swarm8.amount === undefined) player.swarm8.amount = init.swarm8.amount; else player.swarm8.amount = new Decimal(dimensionSave.swarm8.amount);
-            if(player.swarm8.factor === undefined) player.swarm8.factor = init.swarm8.factor; else player.swarm8.factor = new Decimal(dimensionSave.swarm8.factor);
-            if(player.swarm8.growth === undefined) player.swarm8.growth = init.swarm8.growth; else player.swarm8.growtheat = new Decimal(dimensionSave.swarm8.growth);
-            if(player.swarm8.baseAmount === undefined) player.swarm8.baseAmount = init.swarm8.baseAmount; else player.swarm8.baseAmount = dimensionSave.swarm8.baseAmount;
-            
-            if(player.boost === undefined) player.boost = init.boost; else player.boost = dimensionSave.boost;
-            if(player.boostReqSwarm === undefined) player.boostReqSwarm = init.boostReqSwarm; else player.boostReqSwarm = dimensionSave.boostReqSwarm;
-            if(player.boostCost === undefined) player.boostCost = init.boostCost; else player.boostCost = dimensionSave.boostCost;
-            if(player.boostCostUp === undefined) player.boostCostUp = init.boostCostUp; else player.boostCostUp = dimensionSave.boostCostUp;
-            if(player.boostFactor === undefined) player.boostFactor = init.boostFactor; else player.boostFactor = new Decimal(dimensionSave.boostFactor);
-            if(player.boostFactorPerBoost === undefined) player.boostFactorPerBoost = init.boostFactorPerBoost; else player.boostFactorPerBoost = new Decimal(dimensionSave.boostFactorPerBoost);
+            if(dimensionSave.factorPerTen === undefined) player.factorPerTen = init.factorPerTen; else player.factorPerTen = new Decimal(dimensionSave.factorPerTen);
 
-            if(player.boostGathering === undefined) player.boostGathering = init.boostGathering; else player.boostGathering = dimensionSave.boostGathering;
-            if(player.boostGatheringCost === undefined) player.boostGatheringCost = init.boostGatheringCost; else player.boostGatheringCost = dimensionSave.boostGatheringCost;
-            if(player.boostGatheringCostUp === undefined) player.boostGatheringCostUp = init.boostGatheringCostUp; else player.boostGatheringCostUp = dimensionSave.boostGatheringCostUp;
-            if(player.boostGatheringFactor === undefined) player.boostGatheringFactor = init.boostGatheringFactor; else player.boostGatheringFactor = new Decimal(dimensionSave.boostGatheringFactor);
-            if(player.factorPerBoostGathering === undefined) player.factorPerBoostGathering = init.factorPerBoostGathering; else player.factorPerBoostGathering = new Decimal(dimensionSave.factorPerBoostGathering);
+            if(dimensionSave.swarm1.cost === undefined) player.swarm1.cost = init.swarm1.cost; else player.swarm1.cost = new Decimal(dimensionSave.swarm1.cost);
+            if(dimensionSave.swarm1.costUp === undefined) player.swarm1.costUp = init.swarm1.costUp; else player.swarm1.costUp = new Decimal(dimensionSave.swarm1.costUp);
+            if(dimensionSave.swarm1.amount === undefined) player.swarm1.amount = init.swarm1.amount; else player.swarm1.amount = new Decimal(dimensionSave.swarm1.amount);
+            if(dimensionSave.swarm1.factor === undefined) player.swarm1.factor = init.swarm1.factor; else player.swarm1.factor = new Decimal(dimensionSave.swarm1.factor);
+            if(dimensionSave.swarm1.growth === undefined) player.swarm1.growth = init.swarm1.growth; else player.swarm1.growtheat = new Decimal(dimensionSave.swarm1.growth);
+            if(dimensionSave.swarm1.baseAmount === undefined) player.swarm1.baseAmount = init.swarm1.baseAmount; else player.swarm1.baseAmount = dimensionSave.swarm1.baseAmount;
+        
+            if(dimensionSave.swarm2.cost === undefined) player.swarm2.cost = init.swarm2.cost; else player.swarm2.cost = new Decimal(dimensionSave.swarm2.cost);
+            if(dimensionSave.swarm2.costUp === undefined) player.swarm2.costUp = init.swarm2.costUp; else player.swarm2.costUp = new Decimal(dimensionSave.swarm2.costUp);
+            if(dimensionSave.swarm2.amount === undefined) player.swarm2.amount = init.swarm2.amount; else player.swarm2.amount = new Decimal(dimensionSave.swarm2.amount);
+            if(dimensionSave.swarm2.factor === undefined) player.swarm2.factor = init.swarm2.factor; else player.swarm2.factor = new Decimal(dimensionSave.swarm2.factor);
+            if(dimensionSave.swarm2.growth === undefined) player.swarm2.growth = init.swarm2.growth; else player.swarm2.growtheat = new Decimal(dimensionSave.swarm2.growth);
+            if(dimensionSave.swarm2.baseAmount === undefined) player.swarm2.baseAmount = init.swarm2.baseAmount; else player.swarm2.baseAmount = dimensionSave.swarm2.baseAmount;
+        
+            if(dimensionSave.swarm3.cost === undefined) player.swarm3.cost = init.swarm3.cost; else player.swarm3.cost = new Decimal(dimensionSave.swarm3.cost);
+            if(dimensionSave.swarm3.costUp === undefined) player.swarm3.costUp = init.swarm3.costUp; else player.swarm3.costUp = new Decimal(dimensionSave.swarm3.costUp);
+            if(dimensionSave.swarm3.amount === undefined) player.swarm3.amount = init.swarm3.amount; else player.swarm3.amount = new Decimal(dimensionSave.swarm3.amount);
+            if(dimensionSave.swarm3.factor === undefined) player.swarm3.factor = init.swarm3.factor; else player.swarm3.factor = new Decimal(dimensionSave.swarm3.factor);
+            if(dimensionSave.swarm3.growth === undefined) player.swarm3.growth = init.swarm3.growth; else player.swarm3.growtheat = new Decimal(dimensionSave.swarm3.growth);
+            if(dimensionSave.swarm3.baseAmount === undefined) player.swarm3.baseAmount = init.swarm3.baseAmount; else player.swarm3.baseAmount = dimensionSave.swarm3.baseAmount;
+            
+            if(dimensionSave.swarm4.cost === undefined) player.swarm4.cost = init.swarm4.cost; else player.swarm4.cost = new Decimal(dimensionSave.swarm4.cost);
+            if(dimensionSave.swarm4.costUp === undefined) player.swarm4.costUp = init.swarm4.costUp; else player.swarm4.costUp = new Decimal(dimensionSave.swarm4.costUp);
+            if(dimensionSave.swarm4.amount === undefined) player.swarm4.amount = init.swarm4.amount; else player.swarm4.amount = new Decimal(dimensionSave.swarm4.amount);
+            if(dimensionSave.swarm4.factor === undefined) player.swarm4.factor = init.swarm4.factor; else player.swarm4.factor = new Decimal(dimensionSave.swarm4.factor);
+            if(dimensionSave.swarm4.growth === undefined) player.swarm4.growth = init.swarm4.growth; else player.swarm4.growtheat = new Decimal(dimensionSave.swarm4.growth);
+            if(dimensionSave.swarm4.baseAmount === undefined) player.swarm4.baseAmount = init.swarm4.baseAmount; else player.swarm4.baseAmount = dimensionSave.swarm4.baseAmount;
+            
+            if(dimensionSave.swarm5.cost === undefined) player.swarm5.cost = init.swarm5.cost; else player.swarm5.cost = new Decimal(dimensionSave.swarm5.cost);
+            if(dimensionSave.swarm5.costUp === undefined) player.swarm5.costUp = init.swarm5.costUp; else player.swarm5.costUp = new Decimal(dimensionSave.swarm5.costUp);
+            if(dimensionSave.swarm5.amount === undefined) player.swarm5.amount = init.swarm5.amount; else player.swarm5.amount = new Decimal(dimensionSave.swarm5.amount);
+            if(dimensionSave.swarm5.factor === undefined) player.swarm5.factor = init.swarm5.factor; else player.swarm5.factor = new Decimal(dimensionSave.swarm5.factor);
+            if(dimensionSave.swarm5.growth === undefined) player.swarm5.growth = init.swarm5.growth; else player.swarm5.growtheat = new Decimal(dimensionSave.swarm5.growth);
+            if(dimensionSave.swarm5.baseAmount === undefined) player.swarm5.baseAmount = init.swarm5.baseAmount; else player.swarm5.baseAmount = dimensionSave.swarm5.baseAmount;
+            
+            if(dimensionSave.swarm6.cost === undefined) player.swarm6.cost = init.swarm6.cost; else player.swarm6.cost = new Decimal(dimensionSave.swarm6.cost);
+            if(dimensionSave.swarm6.costUp === undefined) player.swarm6.costUp = init.swarm6.costUp; else player.swarm6.costUp = new Decimal(dimensionSave.swarm6.costUp);
+            if(dimensionSave.swarm6.amount === undefined) player.swarm6.amount = init.swarm6.amount; else player.swarm6.amount = new Decimal(dimensionSave.swarm6.amount);
+            if(dimensionSave.swarm6.factor === undefined) player.swarm6.factor = init.swarm6.factor; else player.swarm6.factor = new Decimal(dimensionSave.swarm6.factor);
+            if(dimensionSave.swarm6.growth === undefined) player.swarm6.growth = init.swarm6.growth; else player.swarm6.growtheat = new Decimal(dimensionSave.swarm6.growth);
+            if(dimensionSave.swarm6.baseAmount === undefined) player.swarm6.baseAmount = init.swarm6.baseAmount; else player.swarm6.baseAmount = dimensionSave.swarm6.baseAmount;
+            
+            if(dimensionSave.swarm7.cost === undefined) player.swarm7.cost = init.swarm7.cost; else player.swarm7.cost = new Decimal(dimensionSave.swarm7.cost);
+            if(dimensionSave.swarm7.costUp === undefined) player.swarm7.costUp = init.swarm7.costUp; else player.swarm7.costUp = new Decimal(dimensionSave.swarm7.costUp);
+            if(dimensionSave.swarm7.amount === undefined) player.swarm7.amount = init.swarm7.amount; else player.swarm7.amount = new Decimal(dimensionSave.swarm7.amount);
+            if(dimensionSave.swarm7.factor === undefined) player.swarm7.factor = init.swarm7.factor; else player.swarm7.factor = new Decimal(dimensionSave.swarm7.factor);
+            if(dimensionSave.swarm7.growth === undefined) player.swarm7.growth = init.swarm7.growth; else player.swarm7.growtheat = new Decimal(dimensionSave.swarm7.growth);
+            if(dimensionSave.swarm7.baseAmount === undefined) player.swarm7.baseAmount = init.swarm7.baseAmount; else player.swarm7.baseAmount = dimensionSave.swarm7.baseAmount;
+            
+            if(dimensionSave.swarm8.cost === undefined) player.swarm8.cost = init.swarm8.cost; else player.swarm8.cost = new Decimal(dimensionSave.swarm8.cost);
+            if(dimensionSave.swarm8.costUp === undefined) player.swarm8.costUp = init.swarm8.costUp; else player.swarm8.costUp = new Decimal(dimensionSave.swarm8.costUp);
+            if(dimensionSave.swarm8.amount === undefined) player.swarm8.amount = init.swarm8.amount; else player.swarm8.amount = new Decimal(dimensionSave.swarm8.amount);
+            if(dimensionSave.swarm8.factor === undefined) player.swarm8.factor = init.swarm8.factor; else player.swarm8.factor = new Decimal(dimensionSave.swarm8.factor);
+            if(dimensionSave.swarm8.growth === undefined) player.swarm8.growth = init.swarm8.growth; else player.swarm8.growtheat = new Decimal(dimensionSave.swarm8.growth);
+            if(dimensionSave.swarm8.baseAmount === undefined) player.swarm8.baseAmount = init.swarm8.baseAmount; else player.swarm8.baseAmount = dimensionSave.swarm8.baseAmount;
+            
+            if(dimensionSave.boost === undefined) player.boost = init.boost; else player.boost = dimensionSave.boost;
+            if(dimensionSave.boostReqSwarm === undefined) player.boostReqSwarm = init.boostReqSwarm; else player.boostReqSwarm = dimensionSave.boostReqSwarm;
+            if(dimensionSave.boostCost === undefined) player.boostCost = init.boostCost; else player.boostCost = dimensionSave.boostCost;
+            if(dimensionSave.boostCostUp === undefined) player.boostCostUp = init.boostCostUp; else player.boostCostUp = dimensionSave.boostCostUp;
+            if(dimensionSave.boostFactor === undefined) player.boostFactor = init.boostFactor; else player.boostFactor = new Decimal(dimensionSave.boostFactor);
+            if(dimensionSave.boostFactorPerBoost === undefined) player.boostFactorPerBoost = init.boostFactorPerBoost; else player.boostFactorPerBoost = new Decimal(dimensionSave.boostFactorPerBoost);
+
+            if(dimensionSave.boostGathering === undefined) player.boostGathering = init.boostGathering; else player.boostGathering = dimensionSave.boostGathering;
+            if(dimensionSave.boostGatheringCost === undefined) player.boostGatheringCost = init.boostGatheringCost; else player.boostGatheringCost = dimensionSave.boostGatheringCost;
+            if(dimensionSave.boostGatheringCostUp === undefined) player.boostGatheringCostUp = init.boostGatheringCostUp; else player.boostGatheringCostUp = dimensionSave.boostGatheringCostUp;
+            if(dimensionSave.boostGatheringFactor === undefined) player.boostGatheringFactor = init.boostGatheringFactor; else player.boostGatheringFactor = new Decimal(dimensionSave.boostGatheringFactor);
+            if(dimensionSave.factorPerBoostGathering === undefined) player.factorPerBoostGathering = init.factorPerBoostGathering; else player.factorPerBoostGathering = new Decimal(dimensionSave.factorPerBoostGathering);
              
             //player.meat = new Decimal(player.meat);
             //player.meatPerSec = new Decimal(player.meatPerSec);
