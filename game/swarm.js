@@ -35,7 +35,7 @@ function buyMaxSwarm(tier)
 
 function swarmUpdate()
 {
-    player.meat = player.meat.plus(player.meatPerSec.div(100).mul(new Decimal("1e154")));
+    player.meat = player.meat.plus(player.meatPerSec.div(100));
     for(var a = 1; a < 8; a++)
     { 
         player["swarm" + a].amount = player["swarm" + a].amount.plus(player["swarm" + a].growth.div(300+(30*a)));
